@@ -22,8 +22,8 @@ if umur < 13:
     print("      Mohon Maaf Anda Belum Cukup Umur Untuk Menonton     ")
     print("==========================================================")
 else: 
-    jenis_tiket = input("Pilih Jenis Tiket Anda (Reguler/Premium/VIP):").lower()
-    if jenis_tiket != "reguler" and jenis_tiket != "premium" and jenis_tiket != "vip":
+    jenis_tiket = input("Pilih Jenis Tiket Anda (Reguler/Premium/VIP):")
+    if jenis_tiket != "Reguler" and jenis_tiket != "Premium" and jenis_tiket != "VIP":
         print("==========================================================")
         print("                        PERINGATAN                        ")
         print("==========================================================")
@@ -31,20 +31,21 @@ else:
         print("             Silahkan Pilih Tiket Yang Sesuai             ")
         print("==========================================================")
     else:
-        status_member = input("Apakah Anda Member (Ya/Tidak):").lower()
+        status_member = input("Apakah Anda Member (Ya/Tidak):")
         uang_bayar = int(input("Masukkan Uang Pembayaran:"))
         
         print()
 
-        if jenis_tiket == "reguler":
+        if jenis_tiket == "Reguler":
             harga = 50000
-        elif jenis_tiket == "premium":
+        elif jenis_tiket == "Premium":
             harga = 75000
-        elif jenis_tiket == "vip":
+        elif jenis_tiket == "VIP":
             harga = 100000
+                    
 
-        diskon = 20/100 if status_member == "ya" else 0 
-        biaya_admin = 0 if status_member == "ya" else 2000
+        diskon = 20/100 if status_member == "Ya" else 0 
+        biaya_admin = 0 if status_member == "Ya" else 2000
 
         nominal_diskon = int(harga * diskon)
         total_bayar = harga - nominal_diskon + biaya_admin
@@ -65,11 +66,11 @@ else:
             print("==========================================================")
             print("                     STRUK PEMBAYARAN                     ")
             print("==========================================================")
-            print("Nama            :",nama.capitalize())
+            print("Nama            :",nama)
             print("Umur            :",umur, "Tahun")
-            print("Jenis Tiket     :",jenis_tiket.capitalize())
-            print("Status Member   :",status_member.capitalize())
-            if status_member == "ya":
+            print("Jenis Tiket     :",jenis_tiket)
+            print("Status Member   :",status_member)
+            if status_member == "Ya":
                 print("Harga Awal      : Rp.",harga)
                 print("Diskon 20%      : Rp.",nominal_diskon)
                 print("Harga Diskon    : Rp.",harga - nominal_diskon)
